@@ -1,0 +1,74 @@
+================================================================================
+    grablyrics.py   |   version 1.0     |   zlib license        |   2015-05-12
+    James Hendrie                       |   hendrie.james@gmail.com
+================================================================================
+
+    1.  Description
+    2.  Requirements / Restrictions
+    3.  Installation / Uninstallation
+    4.  Usage
+    5.  Examples
+    6.  Links
+
+
+
+----------------------------------------
+    1.  Description
+----------------------------------------
+
+    grablyrics is a Python script which, as the name suggests, grabs lyrics from
+    the Lyrics Wiki (http://lyrics.wikia.com) and prints them to your terminal.
+
+
+
+----------------------------------------
+    2.  Requirements / Restrictions
+----------------------------------------
+
+    You're going to need Python to run this.  While this script was initially
+    designed for Python 3 (tested: 3.4.3), it will also work with Python 2
+    (tested: 2.7.9).
+
+
+
+----------------------------------------
+    3.  Installation / Uninstallation
+----------------------------------------
+
+    It's a script.  Make sure it's marked executable and copy it somewhere in
+    your $PATH, renaming it however you see fit.
+
+
+----------------------------------------
+    4.  Usage
+----------------------------------------
+
+
+    Usage:  grablyrics "BAND" "SONG TITLE"
+
+    OPTIONS:
+      -h        Print brief help text
+
+
+
+----------------------------------------
+    5.  Examples
+----------------------------------------
+
+grablyrics "poison the well" "nerdy"
+    Get the lyrics for a song named "Nerdy", performed by Poison the Well
+
+grablyics 'converge' 'last light'
+    Grab the lyrics for Last Light, perfomed by Converge
+
+
+
+----------------------------------------
+    6.  Links
+----------------------------------------
+
+    Project page:
+        https://github.com/jahendrie/grablyrics
+
+    Programs page (personal site):
+        http://www.someplacedumb.net/content/progs
