@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #===============================================================================
-#   grablyrics.py   |   version 1.0     |   zlib license    |   2015-05-12
+#   grablyrics.py   |   version 1.1     |   zlib license    |   2015-08-22
 #   James Hendrie                       |   hendrie.james@gmail.com
 #
 #   Description:
@@ -8,6 +8,9 @@
 #       decodes the page and prints the decoded lyrics to the terminal.
 #===============================================================================
 import sys
+
+
+removeMe = ( "<b>", "</b>", "<i>", "</i>" )
 
 
 def format_string( oldString ):
@@ -82,10 +85,16 @@ def main():
     t1 = r"insertBefore(r,s)};}})();</script>"
     t2 = "<!--"
 
-    ##  Grab the lyrics, which are encoded in octal
-    octLyrics = page.partition( t1 )[2].partition( t2 )[0]
-    lyrics = octLyrics.replace( "&#", '', -1 )
-    lyrics = lyrics.replace( "<br />", "10;", -1 ).split( ';' )
+    ##  Grab the lyrics, which are encoded in hexadecimal
+    hexLyrics = page.partition( t1 )[2].partition( t2 )[0]
+    lyrics = hexLyrics.replace( "&#", '', -1 )
+    lyrics = lyrics.replace( "<br />", "10;", -1 )
+
+    ##  Remove all the crap we don't need
+    for r in removeMe:
+        lyrics = lyrics.replace( r, '', -1 )
+
+    lyrics = lyrics.split( ';' )
 
     ##  Go through the lyric character octals, converting them to ascii
     ##  characters and adding them all to one long lyrics string
